@@ -1,5 +1,7 @@
 # grimstad-courses-wiki
 
+link to wiki page: [grimstad-courses-wiki](https://uiano.github.io/grimstad-courses-wiki/)
+
 - plugins 
   - https://squidfunk.github.io/mkdocs-material/reference/
 - documentation
