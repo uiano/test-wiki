@@ -1,4 +1,4 @@
-# Oppsett av SSH nøkkler
+# Oppsett av SSH nøkkler og Passordløs Sudo
 
 ???+ warning
     Dette eksemplet var orginalt skrevet for IKT100 Øving3, men kan og brukes på virtuelle maskiner i andre fag, bare husk å endre navnet på nøkkelen fra ikt100 til faget du skal bruke denne i.
