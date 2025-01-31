@@ -1,7 +1,9 @@
-# Oppsett av SSH nøkkler og Wireshark SSH Remote Capture
-> Denne guiden er ment for å gjøre klar den virtuelle maskinen til øving 3 i IKT100.
+# Oppsett av SSH nøkkler
 
-Før en kommer i gang her så må en først ha funnet IP'en til sin virtuelle maskin, dette vil en finne mer informasjon om [her](../vm.md)
+???+ warning
+    Dette eksemplet var orginalt skrevet for IKT100 Øving3, men kan og brukes på virtuelle maskiner i andre fag, bare husk å endre navnet på nøkkelen fra ikt100 til faget du skal bruke denne i.
+
+Før en kommer i gang her så må en først ha funnet IP'en til sin virtuelle maskin, dette vil en finne mer informasjon om [her](./vm.md)
 
 
 ## SSH Nøkkler
@@ -97,54 +99,3 @@ Nå kan en verifisere at det fungerer som det skal så nå kan en prøve med å 
 ![](./assets/2024-09-26-13-21-36.png)
 
 Her ble jeg logget inn som root uten å måtte skrive passord, og da funker det som det skal :D. En kan trykke Ctrl+d eller skrive exit for å logge ut som root.
-
-
-## Wireshark SSH Remote Caputure
-
-For å begynne å sette opp Wireshark SSH Remote Capture, så må en sørge for å ha installert Wireshark, https://www.wireshark.org/download.html
-
-![](./assets/2024-09-25-16-05-33.png)
-
-???+ warning
-    På windows så er det viktigt at en huker av på komponenten, ``Sshdump, Ciscodump and Wifidump`` under installasjonen av Wireshark. Dette er ikke nødvendigt på macos eller linux.
-
-Etter en har installert Wireshark, så kan en starte opp programmet og det vil se slikt ut når en åpner det.
-
-![](./assets/2024-09-25-16-09-43.png)
-
-Så for å sette opp SSH Remote Capture, så trykker en på tannhjulet til venstre for ``SSH remote capture: sshdump`` som er markert på skjermbildet (1).
-
-Herfra vil en bli møtt med en nytt vindu, hvor en da må fylle inn ip addressen til sin virtuelle maskin inn i feltet ``Remote SSH server address``
-
-
-![](./assets/2024-09-25-16-21-36.png)
-
-Så må en trykke seg over til ``Authentication`` fanen
-
-![](./assets/2024-09-25-16-23-51.png)
-
-Her må en fylle inn ditt uia brukernavn under ``Remote SSH server username`` og så legge inn stien til ssh nøkkelen under ``Path to SSH private key``, en vil finne den på disse stiene.
-
-- Linux
-    - ``/home/bendid13/.ssh/ikt100``
-- Macos
-    - ``/Users/bendid13/.ssh/ikt100``
-- Windows
-    - ``C:\Users\bendid13\.ssh\ikt100``
-
-Så må en videre til ``Capture`` fanen.
-Her må en passe at ``Remote capture command selection`` er satt til tcpdump og,``Gain capture privilege on the remote machine`` er satt til sudo.
- Så er det bare å trykke Save.
-
-![](./assets/2024-09-25-16-50-19.png)
-
-
-Så nå kan en bare trykke på navnet ``SSH Remote Capture: sshdump``
-
-![](./assets/2024-09-25-16-52-07.png)
-
-Da vil det komme opp et nytt vindu som viser trafikken som foregår på den virtuelle maskinen.
-![](./assets/2024-09-26-15-24-11.png)
-
-
-Skulle det være at noe ikke fungerer som det skal så ta kontakt på lab eller på discord :)
