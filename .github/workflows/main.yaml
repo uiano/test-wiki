@@ -11,10 +11,8 @@ jobs:
     steps:
       - name: Checkout master
         uses: actions/checkout@v1
-      - uses: divideprojects/poetry-export-requirements-action@v1
-        with:
-          without-hashes: true
-          outfile-name: requirements.txt
+      - name: Create requirements.txt
+        run: poetry export --without-hashes --format=requirements.txt > requirements.txt
       - name: Deploy docs
         uses: mhausenblas/mkdocs-deploy-gh-pages@master
         env:
