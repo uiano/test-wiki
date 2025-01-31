@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout master
         uses: actions/checkout@v1
+      - name: Poetry Env
+        uses: abatilo/actions-poetry@v4
       - name: Create requirements.txt
         run: poetry export --without-hashes --format=requirements.txt > requirements.txt
       - name: Deploy docs
